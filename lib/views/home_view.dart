@@ -35,7 +35,7 @@ class HomeView extends StatelessWidget {
                     controller.aspectRatioList.add(value.toString());
                     controller.update();
                   },
-                  items: ['1x1', '2x2', '1x2', '2x1'].map((item) {
+                  items: controller.size.map((item) {
                     return DropdownMenuItem(value: item, child: Text(item));
                   }).toList(),
                 ),

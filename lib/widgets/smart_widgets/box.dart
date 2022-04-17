@@ -45,14 +45,16 @@ class BoxWidget extends StatelessWidget {
                       controller.aspectRatioList[index] = value.toString();
                       controller.update();
                     },
-                    items: ['1x1', '2x2', '1x2', '2x1'].map((item) {
+                    items: controller.size.map((item) {
                       return DropdownMenuItem(value: item, child: Text(item));
                     }).toList(),
                   ),
                 ),
               ],
             ),
-            const Spacer(flex: 3,),
+            const Spacer(
+              flex: 3,
+            ),
             Center(
               child: Text(
                 controller.aspectRatioList[index],
@@ -60,7 +62,9 @@ class BoxWidget extends StatelessWidget {
                 style: const TextStyle(fontSize: 28),
               ),
             ),
-            const Spacer(flex: 4,),
+            const Spacer(
+              flex: 4,
+            ),
           ],
         ),
       ),
