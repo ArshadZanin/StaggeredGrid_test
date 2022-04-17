@@ -1,13 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:get/get.dart';
-import 'package:researchfin/core/controllers/view_controllers/home_view_controller.dart';
-import 'package:researchfin/widgets/smart_widgets/box.dart';
+part of home_page_web_view.dart;
 
-class HomeView extends StatelessWidget {
-  HomeView({Key? key}) : super(key: key);
-
-  final controller = Get.put(HomeViewController());
+class _HomePageDesktop extends StatelessWidget {
+  final HomeViewController controller;
+  const _HomePageDesktop({Key? key, required this.controller})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +31,7 @@ class HomeView extends StatelessWidget {
                     controller.aspectRatioList.add(value.toString());
                     controller.update();
                   },
-                  items: controller.size.map((item) {
+                  items: controller.desktopSize.map((item) {
                     return DropdownMenuItem(value: item, child: Text(item));
                   }).toList(),
                 ),
@@ -62,6 +58,7 @@ class HomeView extends StatelessWidget {
                         child: BoxWidget(
                           controller: controller,
                           index: index,
+                          size: controller.desktopSize,
                         ),
                       );
                     }),

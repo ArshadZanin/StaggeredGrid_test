@@ -5,6 +5,7 @@ class BoxWidget extends StatelessWidget {
   // final double height;
   // final double width;
   final HomeViewController controller;
+  final List<String> size;
   final int index;
   const BoxWidget({
     Key? key,
@@ -12,6 +13,7 @@ class BoxWidget extends StatelessWidget {
     // required this.width,
     required this.controller,
     required this.index,
+    required this.size,
   }) : super(key: key);
 
   @override
@@ -45,7 +47,7 @@ class BoxWidget extends StatelessWidget {
                       controller.aspectRatioList[index] = value.toString();
                       controller.update();
                     },
-                    items: controller.size.map((item) {
+                    items: size.map((item) {
                       return DropdownMenuItem(value: item, child: Text(item));
                     }).toList(),
                   ),

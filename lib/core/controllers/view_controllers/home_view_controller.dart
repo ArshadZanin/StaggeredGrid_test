@@ -14,7 +14,9 @@ class HomeViewController extends GetxController {
   }
 
   List<String> _aspectRatioList = [];
-  List<String> size = ['1x1','1x2','1x3','1x4','2x1','2x2','2x3','2x4'];
+  List<String> desktopSize = ['1x1','1x2','1x3','1x4','2x1','2x2','2x3','2x4'];
+  List<String> tabletSize = ['1x1','1x2','2x1','2x2'];
+  List<String> mobileSize = ['1x1','2x1'];
 
   List<String> get aspectRatioList => _aspectRatioList;
   set aspectRatioList(List<String> value) {
